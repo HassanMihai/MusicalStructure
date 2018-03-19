@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Musical Structure</string>
+    <string name="now_playing">Now playing %s</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="next">Jump to next song</string>
+    <string name="previous">Jump to previous song</string>
+    <string name="album_image">Album image</string>
+    <string name="artist_name">Artist name</string>
+    <string name="album_name">Album name</string>
+    <string name="song_title">Song title</string>
+    <string name="now_playing_image">Now playing</string>
+    <string name="albums_label">Here you find albums with great music</string>
+    <string name="songs_label">Here you find all songs from selected album</string>
+    <string name="now_playing_label">Here you find the playing song</string>
+</resources>
