@@ -37,7 +37,7 @@ public class NowPlayingActivity extends AppCompatActivity {
     }
 
     /**
-     * This method saves the state of now playing song view
+     * This method saves the state of play / pause button
      */
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -46,7 +46,7 @@ public class NowPlayingActivity extends AppCompatActivity {
     }
 
     /**
-     * This method restores the state of now playing song view
+     * This method restores the state of play / pause button
      */
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
