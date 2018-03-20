@@ -11,6 +11,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    static final String ARTIST = "Artist";
+    static final String ALBUM = "Album";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,11 +21,11 @@ public class MainActivity extends AppCompatActivity {
 
         // Creating an ArrayList with Albums
         ArrayList<Album> albums = new ArrayList<Album>();
-        albums.add(new Album("Placebo", "Loud Like Love", R.drawable.loudlikelove));
-        albums.add(new Album("The Cranberries", "No Need To Argue", R.drawable.noneedtoargue));
-        albums.add(new Album("Nirvana", "Nevermind", R.drawable.nevermind));
-        albums.add(new Album("Radiohead", "Pablo Honey", R.drawable.pablohoney));
-        albums.add(new Album("Coldplay", "Viva la Vida or Death and All His Friends",R.drawable.vivalavida));
+        albums.add(new Album(getString(R.string.placebo), getString(R.string.placebo_loud_like_love), R.drawable.loudlikelove));
+        albums.add(new Album(getString(R.string.the_cranberries), getString(R.string.the_cranberries_no_need_to_argue), R.drawable.noneedtoargue));
+        albums.add(new Album(getString(R.string.nirvana), getString(R.string.nirvana_nevermind), R.drawable.nevermind));
+        albums.add(new Album(getString(R.string.radiohead), getString(R.string.radiohead_pablo_honey), R.drawable.pablohoney));
+        albums.add(new Album(getString(R.string.coldplay), getString(R.string.coldplay_viva_la_vida_or_death),R.drawable.vivalavida));
 
         AlbumAdapter adapter = new AlbumAdapter(this, albums);
 
@@ -38,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
                 Album selectedItem = (Album) parent.getItemAtPosition(position);
 
                 // Creating intent SongsActivity with extra String ARTIST name and ALBUM name
-                Intent intent = new Intent(MainActivity.this, SongsActivity.class);
-                intent.putExtra("ARTIST", selectedItem.getArtistName());
-                intent.putExtra("ALBUM", selectedItem.getAlbumName());
-                startActivity(intent);
+                Intent songsIntent = new Intent(MainActivity.this, SongsActivity.class);
+                songsIntent.putExtra(ARTIST, selectedItem.getArtistName());
+                songsIntent.putExtra(ALBUM, selectedItem.getAlbumName());
+                startActivity(songsIntent);
             }
         });
     }

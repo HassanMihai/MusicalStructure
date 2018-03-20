@@ -10,6 +10,10 @@ import android.widget.Toast;
 
 public class NowPlayingActivity extends AppCompatActivity {
 
+    static final String SONG = "Song";
+    static final String ARTIST = "Artist";
+    static final String PLAY = "Play";
+
     private TextView nowPlayingSongView;
     private ImageView playPause;
 
@@ -25,9 +29,9 @@ public class NowPlayingActivity extends AppCompatActivity {
 
         // Getting extra String SONG name and ARTIST name from SongsActivity
         Intent mIntent = getIntent();
-        String nowPlayingSong = mIntent.getStringExtra("SONG");
-        String nowPlayingArtist = mIntent.getStringExtra("ARTIST");
-        play = mIntent.getBooleanExtra("PLAY", true);
+        String nowPlayingSong = mIntent.getStringExtra(SONG);
+        String nowPlayingArtist = mIntent.getStringExtra(ARTIST);
+        play = mIntent.getBooleanExtra(PLAY, true);
 
         String playingSong = nowPlayingSong + " - " + nowPlayingArtist;
 

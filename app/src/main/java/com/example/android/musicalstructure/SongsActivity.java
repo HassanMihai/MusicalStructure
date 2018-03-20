@@ -15,6 +15,11 @@ import java.util.ArrayList;
 
 public class SongsActivity extends AppCompatActivity {
 
+    static final String ARTIST = "Artist";
+    static final String ALBUM = "Album";
+    static final String SONG = "Song";
+    static final String PLAY = "Play";
+
     private boolean play;
     private LinearLayout nowPlayingView;
     private LinearLayout nowPlaying;
@@ -40,8 +45,8 @@ public class SongsActivity extends AppCompatActivity {
 
         // Getting extra String ALBUM name and ARTIST name from MainActivity
         Intent mIntent = getIntent();
-        String album = mIntent.getStringExtra("ALBUM").toLowerCase();
-        String artist = mIntent.getStringExtra("ARTIST").toLowerCase();
+        String album = mIntent.getStringExtra(ALBUM);
+        String artist = mIntent.getStringExtra(ARTIST);
 
         artistName.setText(artist);
         albumName.setText(album);
@@ -49,84 +54,84 @@ public class SongsActivity extends AppCompatActivity {
         // Creating ArrayList with songs of albums
         ArrayList<Song> songs = new ArrayList<Song>();
 
-        if (album.equals("loud like love") && artist.equals("placebo")) {
-            songs.add(new Song("Placebo", "Loud Like Love"));
-            songs.add(new Song("Placebo", "Scene of the Crime"));
-            songs.add(new Song("Placebo", "Too Many Friends"));
-            songs.add(new Song("Placebo", "Hold on to Me"));
-            songs.add(new Song("Placebo", "Rob the Bank"));
-            songs.add(new Song("Placebo", "A Million Little Pieces"));
-            songs.add(new Song("Placebo", "Exit Wounds"));
-            songs.add(new Song("Placebo", "Purify"));
-            songs.add(new Song("Placebo", "Begin the End"));
-            songs.add(new Song("Placebo", "Bosco"));
+        if (album.equals(getString(R.string.placebo_loud_like_love)) && artist.equals(getString(R.string.placebo))) {
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_loud_like_love)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_scene_of_the_crime)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_too_many_friends)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_hold_on_to_me)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_rob_the_bank)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_a_million_little_pieces)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_exit_wounds)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_purify)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_begin_the_end)));
+            songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_bosco)));
             albumImage.setImageResource(R.drawable.loudlikelove);
         }
 
-        if (album.equals("no need to argue") && artist.equals("the cranberries")) {
-            songs.add(new Song("The Cranberries", "Ode to My Family"));
-            songs.add(new Song("The Cranberries", "I Can't Be with You"));
-            songs.add(new Song("The Cranberries", "Twenty One"));
-            songs.add(new Song("The Cranberries", "Zombie"));
-            songs.add(new Song("The Cranberries", "Empty"));
-            songs.add(new Song("The Cranberries", "Everything I Said"));
-            songs.add(new Song("The Cranberries", "The Icicle Melts"));
-            songs.add(new Song("The Cranberries", "Disappointment"));
-            songs.add(new Song("The Cranberries", "Ridiculous Thoughts"));
-            songs.add(new Song("The Cranberries", "Dreaming My Dreams"));
-            songs.add(new Song("The Cranberries", "Yeats' Grave"));
-            songs.add(new Song("The Cranberries", "Daffodil Lament"));
-            songs.add(new Song("The Cranberries", "No Need to Argue"));
+        if (album.equals(getString(R.string.the_cranberries_no_need_to_argue)) && artist.equals(getString(R.string.the_cranberries))) {
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_ode_to_my_family)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_i_cant_be_with_you)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_twenty_one)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_zombie)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_empty)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_everything_i_said)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_the_icicle_melts)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_disappointment)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_ridiculous_thoughts)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_dreaming_my_dreams)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_yeats_grave)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_daffodil_lament)));
+            songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_no_need_to_argue)));
             albumImage.setImageResource(R.drawable.noneedtoargue);
         }
 
-        if (album.equals("nevermind") && artist.equals("nirvana")) {
-            songs.add(new Song("Nirvana", "Smells Like Teen Spirit"));
-            songs.add(new Song("Nirvana", "In Bloom"));
-            songs.add(new Song("Nirvana", "Come as You Are"));
-            songs.add(new Song("Nirvana", "Breed"));
-            songs.add(new Song("Nirvana", "Lithium"));
-            songs.add(new Song("Nirvana", "Polly"));
-            songs.add(new Song("Nirvana", "Territorial Pissings"));
-            songs.add(new Song("Nirvana", "Drain You"));
-            songs.add(new Song("Nirvana", "Lounge Act"));
-            songs.add(new Song("Nirvana", "Stay Away"));
-            songs.add(new Song("Nirvana", "On a Plain"));
-            songs.add(new Song("Nirvana", "Something in the Way"));
+        if (album.equals(getString(R.string.nirvana_nevermind)) && artist.equals(getString(R.string.nirvana))) {
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_smells_like_teen_spirit)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_in_bloom)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_come_as_you_are)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_breed)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_lithium)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_polly)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_territorial_pissings)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_drain_you)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_lounge_act)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_stay_away)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_on_a_plain)));
+            songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_something_in_the_way)));
             albumImage.setImageResource(R.drawable.nevermind);
         }
 
-        if (album.equals("pablo honey") && artist.equals("radiohead")) {
-            songs.add(new Song("Radiohead", "You"));
-            songs.add(new Song("Radiohead", "Creep"));
-            songs.add(new Song("Radiohead", "How Do You?"));
-            songs.add(new Song("Radiohead", "Stop Whispering"));
-            songs.add(new Song("Radiohead", "Thinking About You"));
-            songs.add(new Song("Radiohead", "Anyone Can Play Guitar"));
-            songs.add(new Song("Radiohead", "Ripcord"));
-            songs.add(new Song("Radiohead", "Vegetable"));
-            songs.add(new Song("Radiohead", "Prove Yourself"));
-            songs.add(new Song("Radiohead", "I Can't"));
-            songs.add(new Song("Radiohead", "Lurgee"));
-            songs.add(new Song("Radiohead", "Blow Out"));
+        if (album.equals(getString(R.string.radiohead_pablo_honey)) && artist.equals(getString(R.string.radiohead))) {
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_you)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_creep)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_how_do_you)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_stop_whispering)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_thinking_about_you)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_anyone_can_play_guitar)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_ripcord)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_vegetable)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_prove_yourself)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_i_cant)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_lurgee)));
+            songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_blow_out)));
             albumImage.setImageResource(R.drawable.pablohoney);
         }
 
-        if (album.equals("viva la vida or death and all his friends") && artist.equals("coldplay")) {
-            songs.add(new Song("Coldplay", "Life in Technicolor"));
-            songs.add(new Song("Coldplay", "Cemeteries of London"));
-            songs.add(new Song("Coldplay", "Lost!"));
-            songs.add(new Song("Coldplay", "42"));
-            songs.add(new Song("Coldplay", "Lovers in Japan/Reign of Love"));
-            songs.add(new Song("Coldplay", "Yes"));
-            songs.add(new Song("Coldplay", "Viva la Vida"));
-            songs.add(new Song("Coldplay", "Violet Hill"));
-            songs.add(new Song("Coldplay", "Strawberry Swing"));
-            songs.add(new Song("Coldplay", "Death and All His Friends"));
-            songs.add(new Song("Coldplay", "Lost?"));
-            songs.add(new Song("Coldplay", "Lovers in Japan (Acoustic Version)"));
-            songs.add(new Song("Coldplay", "Death Will Never Conquer"));
-            songs.add(new Song("Coldplay", "Life in Technicolor"));
+        if (album.equals(getString(R.string.coldplay_viva_la_vida_or_death)) && artist.equals(getString(R.string.coldplay))) {
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_life_in_technicolor)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_cemeteries_of_london)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_lost_ex)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_42)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_lovers_in_japan)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_yes)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_viva_la_vida)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_violet_hill)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_strawberry_swing)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_death_and_all_his_friends)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_lost_qu)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_lovers_in_japan_acoustic)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_death_will_never_conquer)));
+            songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_life_in_technicolor)));
             albumImage.setImageResource(R.drawable.vivalavida);
         }
 
@@ -211,11 +216,11 @@ public class SongsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Creating intent NowPlayingActivity with extra String SONG name and ARTIST name
-                Intent intent = new Intent(SongsActivity.this, NowPlayingActivity.class);
-                intent.putExtra("SONG", nowPlayingSong);
-                intent.putExtra("ARTIST", nowPlayingArtist);
-                intent.putExtra("PLAY", play);
-                startActivity(intent);
+                Intent nowPlayingIntent = new Intent(SongsActivity.this, NowPlayingActivity.class);
+                nowPlayingIntent.putExtra(SONG, nowPlayingSong);
+                nowPlayingIntent.putExtra(ARTIST, nowPlayingArtist);
+                nowPlayingIntent.putExtra(PLAY, play);
+                startActivity(nowPlayingIntent);
             }
         });
     }
