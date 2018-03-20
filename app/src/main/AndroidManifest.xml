@@ -18,7 +18,7 @@
         </activity>
         <activity
             android:name=".SongsActivity"
-            android:label="Album songs"
+            android:label="@string/album_songs_label_activity"
             android:parentActivityName="com.example.android.musicalstructure.MainActivity"
             android:launchMode="singleTop">
             <meta-data
@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name=".NowPlayingActivity"
-            android:label="Now playing"
+            android:label="@string/now_playing_label_activity"
             android:parentActivityName="com.example.android.musicalstructure.SongsActivity"
             android:launchMode="singleTop">
             <meta-data
