@@ -17,6 +17,7 @@ public class SongsActivity extends AppCompatActivity {
 
     static final String ARTIST = "Artist";
     static final String ALBUM = "Album";
+    static final String IMAGE = "Image";
     static final String SONG = "Song";
     static final String PLAY = "Play";
 
@@ -47,6 +48,7 @@ public class SongsActivity extends AppCompatActivity {
         Intent mIntent = getIntent();
         String album = mIntent.getStringExtra(ALBUM);
         String artist = mIntent.getStringExtra(ARTIST);
+        int image = mIntent.getIntExtra(IMAGE, 0);
 
         artistName.setText(artist);
         albumName.setText(album);
@@ -65,7 +67,7 @@ public class SongsActivity extends AppCompatActivity {
             songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_purify)));
             songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_begin_the_end)));
             songs.add(new Song(getString(R.string.placebo), getString(R.string.placebo_bosco)));
-            albumImage.setImageResource(R.drawable.loudlikelove);
+            albumImage.setImageResource(image);
         }
 
         if (album.equals(getString(R.string.the_cranberries_no_need_to_argue)) && artist.equals(getString(R.string.the_cranberries))) {
@@ -82,7 +84,7 @@ public class SongsActivity extends AppCompatActivity {
             songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_yeats_grave)));
             songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_daffodil_lament)));
             songs.add(new Song(getString(R.string.the_cranberries), getString(R.string.the_cranberries_no_need_to_argue)));
-            albumImage.setImageResource(R.drawable.noneedtoargue);
+            albumImage.setImageResource(image);
         }
 
         if (album.equals(getString(R.string.nirvana_nevermind)) && artist.equals(getString(R.string.nirvana))) {
@@ -98,7 +100,7 @@ public class SongsActivity extends AppCompatActivity {
             songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_stay_away)));
             songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_on_a_plain)));
             songs.add(new Song(getString(R.string.nirvana), getString(R.string.nirvana_something_in_the_way)));
-            albumImage.setImageResource(R.drawable.nevermind);
+            albumImage.setImageResource(image);
         }
 
         if (album.equals(getString(R.string.radiohead_pablo_honey)) && artist.equals(getString(R.string.radiohead))) {
@@ -114,7 +116,7 @@ public class SongsActivity extends AppCompatActivity {
             songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_i_cant)));
             songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_lurgee)));
             songs.add(new Song(getString(R.string.radiohead), getString(R.string.radiohead_blow_out)));
-            albumImage.setImageResource(R.drawable.pablohoney);
+            albumImage.setImageResource(image);
         }
 
         if (album.equals(getString(R.string.coldplay_viva_la_vida_or_death)) && artist.equals(getString(R.string.coldplay))) {
@@ -132,7 +134,7 @@ public class SongsActivity extends AppCompatActivity {
             songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_lovers_in_japan_acoustic)));
             songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_death_will_never_conquer)));
             songs.add(new Song(getString(R.string.coldplay), getString(R.string.coldplay_life_in_technicolor)));
-            albumImage.setImageResource(R.drawable.vivalavida);
+            albumImage.setImageResource(image);
         }
 
         SongAdapter adapter = new SongAdapter(this, songs);

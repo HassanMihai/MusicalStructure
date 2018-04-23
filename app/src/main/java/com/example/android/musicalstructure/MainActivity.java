@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     static final String ARTIST = "Artist";
     static final String ALBUM = "Album";
+    static final String IMAGE = "Image";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent songsIntent = new Intent(MainActivity.this, SongsActivity.class);
                 songsIntent.putExtra(ARTIST, selectedItem.getArtistName());
                 songsIntent.putExtra(ALBUM, selectedItem.getAlbumName());
+                songsIntent.putExtra(IMAGE, selectedItem.getImageResourceId());
                 startActivity(songsIntent);
             }
         });
